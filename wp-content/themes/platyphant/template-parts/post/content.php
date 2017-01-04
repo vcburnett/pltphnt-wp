@@ -13,11 +13,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		if ( is_sticky() && is_home() ) :
-			echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
-		endif;
-	?>
+
 	<header class="entry-header">
 		<?php
 			if ( 'post' === get_post_type() ) :
@@ -63,9 +59,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( is_single() ) : ?>
-		<?php twentyseventeen_entry_footer(); ?>
-	<?php endif; ?>
 
 </article><!-- #post-## -->
