@@ -1,45 +1,43 @@
 <?php get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section id="portfolio">
+	<div class="internal-wrapper">
+		<div class="central-text">
+			<h2>Our work</h2>
+			<p>Bacon ipsum dolor amet andouille beef ribs boudin picanha pig pork belly corned beef pancetta tri-tip alcatra. Filet mignon meatloaf cow kevin tail pork loin burgdoggen, rump ham t-bone ground round pork.</p>
+		</div>
+	</div>
 
-		<?php if ( have_posts() ) : ?>
+	<!-- portfolio content -->
+	<div class="portfolio-content">
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+		<!-- Start the Loop. -->
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+			<!-- client entry -->
+			<a href="<?php the_permalink(); ?>" class="prtf-client-container">
+				<div class="prtf-client-thumb">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="prtf-client-content">
+					<h3><?php echo get_the_title(); ?></h3>
+					<p class="prtf-client-services"><?php foreach((get_the_category()) as $category) { echo '&nbsp&nbsp' . $category->cat_name . '&nbsp&nbsp'; } ?></p>
+					<p class="prtf-client-cta">View the project</p>
+				</div>
+			</a>
+			<!--  end/ client entry -->
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+			<!-- Stop The Loop (but note the "else:" - see next line). -->
 
-			// End the loop.
-			endwhile;
+		<?php endwhile; else : ?>
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
+			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+		<?php endif; ?>
 
-		endif;
-		?>
+	</div>
+	<!-- end/ portfolio content -->
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+</section>
 
 <?php get_footer(); ?>

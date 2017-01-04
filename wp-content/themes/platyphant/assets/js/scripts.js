@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	    }
 
 	    headerHome.css("background-position", "center " + yScroll*.7 + "px");
-	    headerCS.css("background-position", "center " + yScroll*.8 + "px");
+	    headerCS.css("background-position", "center " + yScroll*.6 + "px");
 	});	
 
 	//Scroll links

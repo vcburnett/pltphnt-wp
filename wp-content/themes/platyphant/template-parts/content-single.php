@@ -1,53 +1,23 @@
-<?php
-/**
- * The template part for displaying single posts
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-?>
+<section id="case-study">
+		<!-- portfolio content -->
+		<div class="cs-content">
+			<?php
+				$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+				echo '<div id="cs-img-header" style="background-image: url(' . $url . ')">';
+			?>
+				<div class="cs-img-content-wrapper">
+					<h1><?php the_title(); ?></h1>
+					<a href="#the-content" class="scroll">
+						Read the case study
+						<span class="arrow">
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.31 75.15">
+								<path d="M65.15,75.15a10,10,0,0,1-7.07-2.93L2.93,17.07A10,10,0,0,1,17.07,2.93L65.15,51,113.24,2.93a10,10,0,0,1,14.14,14.14L72.23,72.23A10,10,0,0,1,65.15,75.15Z"/>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+			<?php the_content(); ?>
+		</div><!-- end/ cs-content -->
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php twentysixteen_excerpt(); ?>
-
-	<?php twentysixteen_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
-			}
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</section><!-- #post-## -->
