@@ -1408,6 +1408,97 @@ footer {
 		font-weight: 700;
 	}
 
+/* Error 404 */
+.error-img {
+	width: 36%;
+	display: block;
+	margin: 0 auto;
+	padding: 2em 0;
+}
+.error-content {
+	text-align: center;
+}
+	.error-content h1 {
+		font-family: 'Comfortaa', cursive;
+	}
+		.error-content form {
+			padding-top: 2em;
+		}
+			.error-content form label {
+				
+			}
+				.error-content form label input {
+					font-family: 'Titillium Web', sans-serif;
+					color: #333;
+					width: 60%;
+					font-size: 1.4em;
+					font-weight: 200;
+					letter-spacing: .075em;
+					line-height: 1.25em;
+					display: inline-block;
+					background-color: rgba(255, 255, 255, .5);
+					border: none;
+					border-bottom: 1px solid #ccc;
+					box-sizing: border-box;
+					padding: .5em 1em;
+					margin-bottom: .5em;
+				}
+			.error-content form button {
+				width: auto;
+				font-size: 1em;
+				color: #fff;
+				text-transform: uppercase;
+				text-decoration: none;
+				background-color: #c92e45;
+				display: inline-block;
+				border-radius: 5px;
+				border: none;
+				padding: .85em 2.25em;
+				cursor: pointer;
+				margin-left: .75em;
+				-webkit-transition: background-color .3s;
+				transition: background-color .3s;
+			}
+				.error-content form button:hover {
+					color: #fff;
+					background-color: #357eb1;
+					text-shadow: 0 3px 3px #184665;
+				}
+
+/* Search */
+.search-wrapper {
+	width: 100%;
+	margin: 1em auto 3.5em;
+}
+	.search-thumb {
+		width: 65%;
+		margin-bottom: 1em;
+	}
+	.search-text {
+		
+	}
+		.search-text h1 {
+			font-size: 1.5em;
+			line-height: 1.15em;
+			margin-bottom: .25em;
+		}
+		.search-text a.search-cta {
+			font-size: 1em;
+			color: #363a48;
+			display: inline-block;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: .5em 1.5em;
+			border: 1px solid #a4a8b2;
+			margin-top: 1em;
+		}
+			.search-text a.search-cta:hover {
+				color: #fff;
+				background-color: #357eb1;
+				border-color: #357eb1;
+				text-shadow: 0 3px 3px #184665;
+			}
+
 /* -------------------- */
 /* ---------- */
 /* RESPONSIVE */
@@ -1630,16 +1721,6 @@ footer {
 		width: 33.33%;
 	}
 
-/*
-	.client-container {
-		width: 32%;
-	}
-		.client-container .client-content, .client-container .bg-image {
-			opacity: 1 !important;
-			-webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-/*	    	filter: grayscale(0%);
-		}
-*/
 	.platyphant-sm a {
 		width: 12%;
 		padding: 3%;
@@ -2218,6 +2299,14 @@ footer {
 			}
 	.cs-content .internal-wrapper {
 		padding-top: 9em;
+	}
+
+		.error-content form label input {
+			width: 100%;
+		}
+	.error-content form button {
+		width: 100%;
+		margin-left: 0;
 	}
 
 	.mobile-only {
